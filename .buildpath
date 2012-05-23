@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="Chapter27/Chapter27"/>
+	<buildpathentry kind="src" path="PHP/PHP"/>
+	<buildpathentry kind="src" path="rentabook/rentabook/php"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
