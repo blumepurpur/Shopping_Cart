@@ -22,7 +22,7 @@ function login($username, $password) {
   //var_dump($_SESSION['user_details']);
   return $result;
 }
-  
+  $result=false;
   if (!$result) {
      return 0;
   }

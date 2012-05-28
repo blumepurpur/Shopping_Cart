@@ -15,19 +15,18 @@ function do_html_header($title = '') {
   <head>
     <title><?php echo $title; ?></title>
     <style>
-      h2 { font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: red; margin: 6px }
+      h2 { font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: green; margin: 6px }
       body { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
       li, td { font-family: Arial, Helvetica, sans-serif; font-size: 13px }
-      hr { color: #FF0000; width=70%; text-align=center}
+      hr { color: #BBBFBB; width=70%; text-align=center}
       a { color: #000000 }
     </style>
   </head>
   <body>
-  <table width="100%" border="0" cellspacing="0" bgcolor="#cccccc">
+  <table width="100%" border="0" cellspacing="0">
   <tr>
   <td rowspan="2">
-  <a href="index.php"><img src="images/Book-O-Rama.gif" alt="Bookorama" border="0"
-       align="left" valign="bottom" height="55" width="325"/></a>
+  
   </td>
   <td align="right" valign="bottom">
   <?php
@@ -381,7 +380,7 @@ function display_login_form() {
     
   // dispaly form asking for name and password
 ?>
- <form method="post" action="identify_user.php">
+ <form method="post" action="../identify_user.php">
  <table bgcolor="#cccccc">
    <tr>
      <td>Username:</td>
@@ -391,7 +390,7 @@ function display_login_form() {
      <td><input type="password" name="passwd"/></td></tr>
    <tr>
      <td colspan="2" align="center">
-     <input type="submit" value="Log in"/></td></tr>
+     <input type="submit" value=""/></td></tr>
    <tr>
  </table></form>
 <?php
