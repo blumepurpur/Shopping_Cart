@@ -118,7 +118,7 @@ require_once('lib/class_loader.php');
               <div class="contact-form">
 				<h2>Please Fill in the form below</h2>
                             
-                            <form action="one.php" method="post" class="ajax_form" name="sellbookForm">
+                            <form action="register_user.php" method="post" class="ajax_form" name="register_user">
                               <div class="row field_text alignleft">
                            	    <label>your username (required):</label><br />
                                     <input name="username" type="text" value="" id="username" class="inputtext input_middle required" size="40" type="text" />
@@ -145,8 +145,8 @@ require_once('lib/class_loader.php');
                               <div class="clear"></div>
                                 
 	                            <div class="row field_submit">
-                                	<span class="reset-link"><a href="#" onclick="document.contactForm.reset();return false">reset all fields</a></span>
-                                	<input value="Send Message" title="Send Message" class="contact-submit submit" id="send"  type="submit" /> 
+                              
+                                	<input class="contact-submit submit"  type="submit" /> 
 								</div>                               
                             </form>
                         </div>

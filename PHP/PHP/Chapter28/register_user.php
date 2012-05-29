@@ -1,32 +1,3 @@
-<?php
-session_start();
-// include function files for this application
-require_once('book_sc_fns.php');
-
-if ($_SESSION['username']&& $_SESSION['passwd']) {
-	// they have just tried logging in
-
-    $username = $_SESSION['username'];
-    $passwd = $_SESSION['passwd'];
-
-    if (login($username, $passwd)) {
-      // if they are in the database register the user id
-      $_SESSION['admin_user'] = $username;
-      $_SESSION['pass']= $passwd;
-
-   } else {
-      // unsuccessful login
-      do_html_header("Problem:");
-      echo "<p>You could not be logged in.<br/>
-            You must be logged in to view this page.</p>";
-      do_html_url('login.php', 'Login');
-      do_html_footer();
-      exit;
-    }
-}
-
-?>
-
 <html>
 <head>
         <<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -104,16 +75,60 @@ if ($_SESSION['username']&& $_SESSION['passwd']) {
         <!-- content -->
     	<div class="grid_17 suffix_1">
         
-      <?php 
-             do_html_header("Administration");
-if (check_admin_user()) {
-  display_admin_menu();
-} else {
-  echo "<p>You are not authorized to enter the administration area.</p>";
-}
-do_html_footer();
+                      <div class="contact-form">
+				<h2>Please Fill in the form below</h2>
+                            
+                            <form action="insert_user.php" method="post" class="ajax_form" name="insert_customer">
+                              <div class="row field_text alignleft">
+                           	    <label>your username (required):</label><br />
+                                    <input name="username" type="text" value="" id="username" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+								
+				<div class="row field_text alignleft">
+                                	<label>Your password (required):</label><br />
+                                    <input name="password" type="password" value="" id="password" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+								
+								  <div class="row field_text alignleft">
+                                	<label>Your address (required):</label><br />
+                                    <input name="address" type="text" value="" id="address" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
 
-?>      
+								  <div class="row field_text alignleft">
+                                	<label>Your name (required):</label><br />
+                                    <input name="name" type="text" value="" id="name" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+								
+								  <div class="row field_text alignleft">
+                                	<label>Your city (required):</label><br />
+                                    <input name="city" type="text" value="" id="city" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+                                
+                                   <div class="row field_text alignleft">
+                                	<label>Your state (required):</label><br />
+                                    <input name="state" type="text" value="" id="state" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+                                 <div class="row field_text alignleft">
+                                	<label>Your zip (required):</label><br />
+                                    <input name="zip" type="text" value="" id="zip" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+								
+								  <div class="row field_text alignleft">
+                                	<label>Your country (required):</label><br />
+                                    <input name="country" type="text" value="" id="country" class="inputtext input_middle required" size="40" type="text" />
+                                </div>
+                                
+							    <!--<div class="row field_text">
+                                	<input name="subject" value="" id="subject" class="inputcheckbox" size="40" type="checkbox" /> <label>Subscribe for newsletter?</label> 
+                                </div>-->
+                              <div class="clear"></div>
+                                
+	                            <div class="row field_submit">
+                                	
+                                	<input value="" type="submit" /> 
+								</div>                               
+                            </form>
+                        </div>
             
              <div class="contact-form">
 				<h2></h2>

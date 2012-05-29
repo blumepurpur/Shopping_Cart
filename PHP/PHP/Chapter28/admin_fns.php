@@ -189,6 +189,31 @@ function insert_category($catname) {
    }
 }
 
+
+function insert_customer($username,$password,$address,$state,$zip,$city,$country,$name)
+// inserts a new customer into the database
+{
+$conn = db_connect();
+
+// check category does not already exist
+   $query = "select *
+             from customers
+             where username='".$username."'";
+   $result = $conn->query($query);
+   if ((!$result) || ($result->num_rows!=0)) {
+     return false;
+   }	
+   $query = "insert into customers  (name,address,city,state,zip,country,username,password,type_user) values
+            ('".$name."','".$address."','".$city."','".$state."','".$zip."','".$country."','".$username."',sha1('".$password."'),2)";
+   //echo $query;
+   $result = $conn->query($query);
+   if (!$result) {
+     return false;
+   } else {
+     return true;
+   }			
+}
+
 function insert_book($isbn, $title, $author, $catid, $price, $description) {
 // insert a new book into the database
 

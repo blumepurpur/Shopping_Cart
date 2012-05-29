@@ -112,7 +112,7 @@
         </div>
         
         <div class="baner-item">
-        	<div class="baner-img"><a href="register.php"><img src="images/baner_top_2.jpg" alt="" width="230" height="73" border="0" /></a></div>
+        	<div class="baner-img"><a href="../register_user.php"><img src="images/baner_top_2.jpg" alt="" width="230" height="73" border="0" /></a></div>
         	<h2><span>New Customer</span>Registration</h2>
         </div>
         

@@ -1,5 +1,3 @@
-
-
 <?php
 require_once('lib/class_loader.php');
 @session_start();

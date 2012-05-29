@@ -2,7 +2,6 @@
 
 function do_html_header($title = '') {
   // print an HTML header
-
   // declare the session variables we want access to inside the function
   if (!$_SESSION['items']) {
     $_SESSION['items'] = '0';
@@ -30,6 +29,7 @@ function do_html_header($title = '') {
   </td>
   <td align="right" valign="bottom">
   <?php
+  
      if(isset($_SESSION['admin_user'])) {
        echo "&nbsp;";
      } else {
