@@ -190,7 +190,7 @@ function insert_category($catname) {
 }
 
 
-function insert_customer($username,$password,$address,$state,$zip,$city,$country,$name)
+function insert_customer($username,$password,$address,$state,$zip,$city,$country,$name,$email)
 // inserts a new customer into the database
 {
 $conn = db_connect();
@@ -203,8 +203,8 @@ $conn = db_connect();
    if ((!$result) || ($result->num_rows!=0)) {
      return false;
    }	
-   $query = "insert into customers  (name,address,city,state,zip,country,username,password,type_user) values
-            ('".$name."','".$address."','".$city."','".$state."','".$zip."','".$country."','".$username."',sha1('".$password."'),2)";
+   $query = "insert into customers  (name,address,city,state,zip,country,username,password,type_user,email) values
+            ('".$name."','".$address."','".$city."','".$state."','".$zip."','".$country."','".$username."',sha1('".$password."'),2,'".$email."')";
    //echo $query;
    $result = $conn->query($query);
    if (!$result) {

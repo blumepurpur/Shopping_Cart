@@ -75,67 +75,7 @@
         <!-- content -->
     	<div class="grid_17 suffix_1">
         
-                      <div class="contact-form">
-				<h2>Please Fill in the form below</h2>
-                            
-                            <form action="insert_user.php" method="post" class="ajax_form" name="insert_customer">
-                              <div class="row field_text alignleft">
-                           	    <label>your username (required):</label><br />
-                                    <input name="username" type="text" value="" id="username" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-								
-				<div class="row field_text alignleft">
-                                	<label>Your password (required):</label><br />
-                                    <input name="password" type="password" value="" id="password" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-								
-								   <div class="row field_text alignleft">
-                                	<label>Your name (required):</label><br />
-                                    <input name="name" type="text" value="" id="name" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-								
-								 
-								  <div class="row field_text alignleft">
-                                	<label>Your address (required):</label><br />
-                                    <input name="address" type="text" value="" id="address" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-
-								  <div class="row field_text alignleft">
-                                	<label>Your email (required):</label><br />
-                                    <input name="email" type="text" value="" id="email" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-								
-								
-								  <div class="row field_text alignleft">
-                                	<label>Your city (required):</label><br />
-                                    <input name="city" type="text" value="" id="city" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-                                
-                                   <div class="row field_text alignleft">
-                                	<label>Your state (required):</label><br />
-                                    <input name="state" type="text" value="" id="state" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-                                 <div class="row field_text alignleft">
-                                	<label>Your zip (required):</label><br />
-                                    <input name="zip" type="text" value="" id="zip" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-								
-								  <div class="row field_text alignleft">
-                                	<label>Your country (required):</label><br />
-                                    <input name="country" type="text" value="" id="country" class="inputtext input_middle required" size="40" type="text" />
-                                </div>
-                                
-							    <!--<div class="row field_text">
-                                	<input name="subject" value="" id="subject" class="inputcheckbox" size="40" type="checkbox" /> <label>Subscribe for newsletter?</label> 
-                                </div>-->
-                              <div class="clear"></div>
-                                
-	                            <div class="row field_submit">
-                                	
-                                	<input value="" type="submit" /> 
-								</div>                               
-                            </form>
-                        </div>
+                      
             
              <div class="contact-form">
 				<h2></h2>

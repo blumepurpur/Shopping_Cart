@@ -12,11 +12,12 @@ $zip=$_POST['zip'];
 $city=$_POST['city'];
 $country=$_POST['country'];
 $name=$_POST['name'];
+$email=$_POST['email'];
 
 
 do_html_header("Adding a new customer");
 
-if(insert_customer($username,$password,$address,$state,$zip,$city,$country,$name)) 
+if(insert_customer($username,$password,$address,$state,$zip,$city,$country,$name,$email)) 
 {
       echo "<p>Customer \"".$username."\" was added to the database.</p>";
 } 
@@ -27,3 +28,4 @@ else
 
 do_html_footer();
 ?>
+<a href="web/login.php">Click to go to the Login</a>
