@@ -104,8 +104,9 @@ if ($_SESSION['username']&& $_SESSION['passwd']) {
         <!-- content -->
     	<div class="grid_17 suffix_1">
         
-      <?php 
-             do_html_header("Administration");
+<?php 
+
+do_html_header("Administration");
 if (check_admin_user()) {
   display_admin_menu();
 } else {

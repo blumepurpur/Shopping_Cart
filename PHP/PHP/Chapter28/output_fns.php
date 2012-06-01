@@ -397,14 +397,13 @@ function display_login_form() {
 }
 
 function display_admin_menu() {
-	//session_start();
-	//var_dump($_SESSION['user_details']);
 ?>
 <br />
 <a href="index.php">Go to main site</a><br />
 <a href="insert_category_form.php">Add a new category</a><br />
 <a href="insert_book_form.php">Add a new book</a><br />
 <a href="change_password_form.php">Change admin password</a><br />
+<a href="customers_list.php">Customers List</a><br />
 <?php
 }
 

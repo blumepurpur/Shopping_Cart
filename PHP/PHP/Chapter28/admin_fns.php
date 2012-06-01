@@ -214,6 +214,20 @@ $conn = db_connect();
    }			
 }
 
+function customers_list()
+{
+	$conn = db_connect();
+   $query = "select *
+             from customers";
+   $result = $conn->query($query);
+   
+   if (!$result) {
+     return false;
+   } else {
+     return db_result_to_array($result);
+   }		
+} 
+
 function insert_book($isbn, $title, $author, $catid, $price, $description) {
 // insert a new book into the database
 
