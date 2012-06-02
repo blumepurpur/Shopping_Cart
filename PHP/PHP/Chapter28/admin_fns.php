@@ -164,6 +164,19 @@ function display_password_form() {
 <?php
 }
 
+function email_customers()
+{
+	$query = "select emal from customers";
+    $result = $conn->query($query);
+    if (isset($result)) 
+    {
+     	return false;
+    } else 
+    {
+     	return db_result_to_array($result);
+    }	
+}
+
 function insert_category($catname) {
 // inserts a new category into the database
 

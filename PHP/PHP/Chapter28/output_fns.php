@@ -3,10 +3,11 @@
 function do_html_header($title = '') {
   // print an HTML header
   // declare the session variables we want access to inside the function
-  if (!$_SESSION['items']) {
+  
+  if (isset($_SESSION['items'])) {
     $_SESSION['items'] = '0';
   }
-  if (!$_SESSION['total_price']) {
+  if (isset($_SESSION['total_price'])) {
     $_SESSION['total_price'] = '0.00';
   }
 ?>
@@ -404,6 +405,7 @@ function display_admin_menu() {
 <a href="insert_book_form.php">Add a new book</a><br />
 <a href="change_password_form.php">Change admin password</a><br />
 <a href="customers_list.php">Customers List</a><br />
+<a href="email_form.php">Send email to all Customers</a><br />
 <?php
 }
 
