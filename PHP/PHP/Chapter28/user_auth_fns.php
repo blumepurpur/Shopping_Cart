@@ -18,7 +18,6 @@ function login($username, $password) {
                          where username='".$username."'
                          and password = sha1('".$password."')");
   list($_SESSION['user_details']) = db_result_to_array($result);
-  //list($_SESSION['user_details']) = $conn->mysql_fetch_array($result);
   //var_dump($_SESSION['user_details']);
   return $result;
 }

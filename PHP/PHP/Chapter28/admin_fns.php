@@ -216,11 +216,11 @@ $conn = db_connect();
 
 function customers_list()
 {
-	$conn = db_connect();
+   $conn = db_connect();
    $query = "select *
              from customers";
    $result = $conn->query($query);
-   
+   //var_dump(db_result_to_array($result));
    if (!$result) {
      return false;
    } else {
