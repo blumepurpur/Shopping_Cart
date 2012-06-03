@@ -30,12 +30,14 @@ function do_html_header($title = '') {
   </td>
   <td align="right" valign="bottom">
   <?php
-  
+  if(isset($_SESSION['items']))
+  {
      if(isset($_SESSION['admin_user'])) {
        echo "&nbsp;";
      } else {
        echo "Total Items = ".$_SESSION['items'];
      }
+  }  
   ?>
   </td>
   <td align="right" rowspan="2" width="135">
@@ -53,8 +55,9 @@ function do_html_header($title = '') {
      if(isset($_SESSION['admin_user'])) {
        echo "&nbsp;";
      } else {
+     	if(isset($_SESSION['total_price'])){
        echo "Total Price = $".number_format($_SESSION['total_price'],2);
-     }
+     }}
   ?>
   </td>
   </tr>

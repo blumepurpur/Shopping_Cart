@@ -6,7 +6,7 @@ $customers_emails=false;
 
 // Email Settings
 $site['from_name'] = 'Arturo'; // from email name
-$site['from_email'] = 'email@mywebsite.com'; // from email address
+$site['from_email'] = 'ebook@hotmail.com'; // from email address
 $site['subject']="Promotion";
 // provide an option to use external mail server.
 //$site['smtp_mode'] = 'disabled'; // enabled or disabled
