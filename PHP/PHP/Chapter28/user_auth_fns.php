@@ -21,17 +21,18 @@ function login($username, $password) {
   //var_dump($_SESSION['user_details']);
   return $result;
 }
-  $result=false;
-  if (!$result) {
+  
+  if (isset($result)) {
      return 0;
   }
-
-  if ($result->num_rows>0) {
-     return 1;
-  } else {
-     return 0;
+  
+  if(isset($result)){
+	  if ($result->num_rows>0) {
+	     return 1;
+	  } else {
+	     return 0;
+	  }
   }
-
 
 function check_admin_user() {
 // see if somebody is logged in and notify them if not
