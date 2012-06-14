@@ -2,25 +2,31 @@
 
 require_once('db_fns.php');
 
-function login($username, $password) {
-// check username and password with db
-// if yes, return true
-// else return false
 
-  // connect to db
-  $conn = db_connect();
-  if (!$conn) {
-    return 0;
-  }
+	function login($username, $password) 
+	{
+		// check username and password with db
+		// if yes, return true
+		// else return false
+		
+		  // connect to db
+		  $conn = db_connect();
+		  if (!$conn) {
+		    return 0;
+		  }
+		
+		  // check if username is unique
+		  
+		  $result = $conn->query("select * from customers
+		                         where username='".$username."'
+		                         and password = sha1('".$password."')");
+		  
+			  list($_SESSION['user_details']) = db_result_to_array($result);
+			  //var_dump($_SESSION['user_details']);
+		  
+			return $result;
+	}
 
-  // check if username is unique
-  $result = $conn->query("select * from customers
-                         where username='".$username."'
-                         and password = sha1('".$password."')");
-  list($_SESSION['user_details']) = db_result_to_array($result);
-  //var_dump($_SESSION['user_details']);
-  return $result;
-}
   
   if (isset($result)) {
      return 0;

@@ -46,6 +46,7 @@ function do_html_header($title = '') {
        display_button('logout.php', 'log-out', 'Log Out');
      } else {
        display_button('show_cart.php', 'view-cart', 'View Your Shopping Cart');
+       display_button('logout_customer.php', 'log-out', 'Log Out');
      }
   ?>
   </tr>
@@ -384,19 +385,20 @@ function display_login_form() {
     
   // dispaly form asking for name and password
 ?>
- <form method="post" action="../identify_user.php">
+ <form method="post" action="../identify_user.php" name="login" onSubmit="return validateEmpty()">
  <table bgcolor="#cccccc">
    <tr>
      <td>Username:</td>
-     <td><input type="text" name="username"/></td></tr>
+     <td><input type="text" name="username" id="username"/></td></tr>
    <tr>
      <td>Password:</td>
-     <td><input type="password" name="passwd"/></td></tr>
+     <td><input type="password" name="passwd" id="passwd"/></td></tr>
    <tr>
      <td colspan="2" align="center">
-     <input type="submit" value=""/></td></tr>
+     <input type="submit" value="" /></td></tr>
    <tr>
  </table></form>
+  
 <?php
 }
 

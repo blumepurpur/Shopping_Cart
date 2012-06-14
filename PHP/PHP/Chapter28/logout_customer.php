@@ -1,7 +1,12 @@
-<?php
- require_once('../book_sc_fns.php');
-?>
+<?php 
+// include function files for this application
+require_once('book_sc_fns.php');
+session_start();
+$old_user = $_SESSION['user_details'];  // store  to test if they *were* logged in
+unset($_SESSION['user_details']);
+session_destroy();
 
+?>
 <html>
 <head>
         <<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,20 +15,20 @@
 <meta name="description" content="A short description of your company" />
 <meta name="keywords" content="Some keywords that best describes your businee" />
 
-<link rel="stylesheet" type="text/css" href="styles.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="web/styles.css" />
+<script type="text/javascript" src="web/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$(".widget_recent_entries li:even").addClass("even");
 	});
 </script>
 
-<link rel="stylesheet" type="text/css" href="css/wi-theme/jquery-ui-1.8.9.custom.css" />
-<link rel="stylesheet" type="text/css" href="css/ui.selectmenu.css" />
-<script type="text/javascript" language="javascript" src="js/jquery-ui-1.8.9.custom.min.js"></script>
-<script type="text/javascript" language="javascript" src="js/ui.selectmenu.js"></script>
-<script type="text/javascript" language="javascript" src="js/styled.selectmenu.js"></script>
-<script type="text/javascript" language="javascript" src="js/custom.js"></script>   
+<link rel="stylesheet" type="text/css" href="web/css/wi-theme/jquery-ui-1.8.9.custom.css" />
+<link rel="stylesheet" type="text/css" href="web/css/ui.selectmenu.css" />
+<script type="text/javascript" language="javascript" src="web/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script type="text/javascript" language="javascript" src="web/js/ui.selectmenu.js"></script>
+<script type="text/javascript" language="javascript" src="web/js/styled.selectmenu.js"></script>
+<script type="text/javascript" language="javascript" src="web/js/custom.js"></script>   
 </head>
     
    
@@ -33,11 +38,11 @@
 <div class="head">
 <div class="container">
 
-	<div class="logo"><a href="index.php"><img src="images/logo.png" alt="" width="240" height="56" border="0" /></a></div>
+	<div class="logo"><a href="web/index.php"><img src="web/images/logo.png" alt="" width="240" height="56" border="0" /></a></div>
     
     <div class="head_right">
     	<div class="icon-top icon-phone">Call us directly: <span>1-800-643-4300</span></div>
-        <div class="icon-top icon-map">Via Ludovisi 39, Rome, <a href="location.php"><span>View on Map</span></a></div>
+        <div class="icon-top icon-map">Via Ludovisi 39, Rome, <a href="web/location.php"><span>View on Map</span></a></div>
     </div>
 </div>
 </div>
@@ -47,14 +52,14 @@
 	<div class="container">
         
 	        <ul class="topmenu">
-				<li class="first current-menu-item"><a href="index.php">Home</a></li>
-              	<li><a href="about.php">About us</a></li>
-				<li><a href="sellbook.php">Sell your book</a></li>
-				<li><a href="login.php">login</a></li>
-                <li><a href="categories.php">Category</a></li>
-                <li><a href="news.php">News &amp; Promos</a></li>
+				<li class="first current-menu-item"><a href="web/index.php">Home</a></li>
+              	<li><a href="web/about.php">About us</a></li>
+				<li><a href="web/sellbook.php">Sell your book</a></li>
+				<li><a href="web/login.php">login</a></li>
+                <li><a href="web/categories.php">Category</a></li>
+                <li><a href="web/news.php">News &amp; Promos</a></li>
                 <li class="last"><a href="contacts.php">Contact</a></li>
-				<li><a href="columns.php">Help</a></li>
+				<li><a href="web/columns.php">Help</a></li>
        	  </ul>
         </div>
 </div>        
@@ -69,7 +74,7 @@
 <div class="container">
 
 	<div class="header-title-image">
-    	<div class="image"><img src="images/header/header_5.jpg" width="708" height="124" alt="" /></div>
+    	<div class="image"><img src="web/images/header/header_5.jpg" width="708" height="124" alt="" /></div>
     	<h1><span>Please</span> Register </h1>
     </div>
     
@@ -79,17 +84,27 @@
         <!-- content -->
     	<div class="grid_17 suffix_1">
         
-                      
+<?php 
+// start output html
+//do_html_header("Logging Out");
+
+if (!empty($old_user)) {
+  echo "<p>Logged out.</p>";
+  do_html_url("web/login.php", "Login");
+} else {
+  // if they weren't logged in but came to this page somehow
+  echo "<p>You were not logged in, and so have not been logged out.</p>";
+  do_html_url("web/login.php", "Login");
+}
+
+do_html_footer();
+
+?>           
             
              <div class="contact-form">
-				<h2>Please Fill in the form below</h2>
+				<h2></h2>
                                    </div>
-        <?php
-
-			 display_login_form();
- 
-		?>    
-               
+       
            </div>
         <!--/ content -->
          
@@ -162,11 +177,11 @@
         
 <div class="botmenu">
             	<ul>
-                    <li class="first current-menu-item"><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About us</a></li>
-                    <li><a href="sellbook.php">Sell your Texbook</a></li>
-                    <li><a href="location.php">Location</a></li>
-					<li><a href="columns.php">Help</a></li>
+                    <li class="first current-menu-item"><a href="web/index.php">Home</a></li>
+                    <li><a href="web/about.php">About us</a></li>
+                    <li><a href="web/sellbook.php">Sell your Texbook</a></li>
+                    <li><a href="web/location.php">Location</a></li>
+					<li><a href="web/columns.php">Help</a></li>
        	  		</ul>
             </div>
             
@@ -189,18 +204,3 @@
     </body>
     
 </html>
- <script type="text/javascript">
-
-function validateEmpty() {
-    if (document.getElementById("username").value== "" && document.getElementById("passwd").value== "") 
-    {
-        //fld.style.background = 'Yellow'; 
-        alert("Please fill in the username and password")
-        return false;
-    } else {
-        //fld.style.background = 'White';
-     return true;   
-    }  
-}
-
-</script>

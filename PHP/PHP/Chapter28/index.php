@@ -81,7 +81,31 @@ include ('book_sc_fns.php');
     	<div class="grid_17 suffix_1">
         
  <?php 
- do_html_header("Welcome to Renta a texbook ");
+ if (isset($_SESSION['username'])) 
+{
+	// they have just tried logging in
+
+    $username = $_SESSION['username'];
+    $passwd = $_SESSION['passwd'];
+
+    if (login($username, $passwd)) 
+    {
+      // if they are in the database register the user id
+      $_SESSION['customer'] = $username;
+      $_SESSION['pass']= $passwd;
+	}
+} 
+else
+{
+     // unsuccessful login
+      do_html_header("Problem:");
+      echo "<p>You could not be logged in.<br/>
+            You must be logged in to view this page.</p>";
+      do_html_url('web/login.php', 'Login');
+      do_html_footer();
+      exit;
+}
+ do_html_header("Welcome to Rent a texbook ");
 
   echo "<p>Please choose a category:</p>";
 
@@ -202,3 +226,5 @@ include ('book_sc_fns.php');
     </body>
     
 </html>
+
+
