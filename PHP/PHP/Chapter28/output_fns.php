@@ -4,10 +4,10 @@ function do_html_header($title = '') {
   // print an HTML header
   // declare the session variables we want access to inside the function
   
-  if (isset($_SESSION['items'])) {
+  if (!isset($_SESSION['items'])) {
     $_SESSION['items'] = '0';
   }
-  if (isset($_SESSION['total_price'])) {
+  if (!isset($_SESSION['total_price'])) {
     $_SESSION['total_price'] = '0.00';
   }
 ?>
