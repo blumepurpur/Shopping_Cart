@@ -28,7 +28,7 @@ require_once('db_fns.php');
 		  {
 	   		  list($_SESSION['user_details']) = $resultArray;
 			  //var_dump($_SESSION['user_details']);
-			  return $result;
+			  return $result=1;
 		  }else 
 		  {
 		  	return $result=0;
