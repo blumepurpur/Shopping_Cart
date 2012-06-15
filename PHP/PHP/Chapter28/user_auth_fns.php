@@ -21,10 +21,18 @@ require_once('db_fns.php');
 		                         where username='".$username."'
 		                         and password = sha1('".$password."')");
 		  
-			  list($_SESSION['user_details']) = db_result_to_array($result);
-			  //var_dump($_SESSION['user_details']);
+		  $resultArray=db_result_to_array($result);
 		  
-			return $result;
+   		  //var_dump($resultArray[0]);
+		  if(isset($resultArray[0]))
+		  {
+	   		  list($_SESSION['user_details']) = $resultArray;
+			  //var_dump($_SESSION['user_details']);
+			  return $result;
+		  }else 
+		  {
+		  	return $result=0;
+		  }	  
 	}
 
   
